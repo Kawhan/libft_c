@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/19 07:53:25 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/19 20:10:22 by klaurind         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -22,8 +34,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			dest_cpy[i] == src_cpy[i];
+			dest_cpy[i] = src_cpy[i];
 			i++;
 		}
 	}
+	return (dest_cpy);
 }
