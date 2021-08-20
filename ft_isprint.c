@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 07:53:30 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/19 18:13:49 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/19 22:45:06 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/20 00:07:02 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *s, int c, size_t len)
+int	ft_isprint(int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (len > 0)
+	if ((c < ' ') || (c > '~'))
 	{
-		str[len - 1] = c;
-		len--;
-	}
-	return (s);
+		return (0);
+	}					
+	return (1);
 }

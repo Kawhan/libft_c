@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 07:53:30 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/19 18:13:49 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/20 09:41:42 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/20 09:43:06 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <string.h>
 
-void	*ft_memset(void *s, int c, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char	*str;
+	size_t	i;
 
-	str = (char *)s;
-	while (len > 0)
+	i = 0;
+	if (dstsize == 0)
 	{
-		str[len - 1] = c;
-		len--;
+		while (src[i])
+			i++;
+		return (i);
 	}
-	return (s);
+	while (i < dstsize - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (i < dstsize)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }

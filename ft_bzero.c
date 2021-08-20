@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/19 07:52:49 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/19 22:20:10 by klaurind         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
-#include <stdio.h>
 
 void	*ft_memset(void *s, int c, size_t len)
 {
@@ -17,26 +28,4 @@ void	*ft_memset(void *s, int c, size_t len)
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
-}
-
-int	main(void)
-{
-	char	s[100];
-	char	sbis[100];
-	int		i;
-
-	s[100] = "aaaaa";
-	sbis[100] = "aaaaa";
-	printf("Test de ft_bzero :\n");
-	strcpy(sbis, s);
-	bzero(s, 3);
-	ft_bzero(sbis, 3);
-	i = 0;
-	while (i < 5 && s[i] == sbis[i])
-		i++;
-	if (i == 5)
-		printf("OK\n");
-	else
-		printf("Failed : expected [%c][%c][%c][%c][%c], got [%c][%c][%c][%c][%c].\n", s[0], s[1], s[2], s[3], s[4], sbis[0], sbis[1], sbis[2], sbis[3], sbis[4]);
-	
 }
