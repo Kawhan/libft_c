@@ -6,11 +6,11 @@
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 07:53:25 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/19 20:10:26 by klaurind         ###   ########.fr       */
+/*   Updated: 2021/08/21 21:58:49 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

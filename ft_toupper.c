@@ -6,11 +6,13 @@
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 23:18:23 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/19 23:18:24 by klaurind         ###   ########.fr       */
+/*   Updated: 2021/08/21 22:02:25 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(int c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if ((c >= 'a') && (c <= 'z'))
 	{

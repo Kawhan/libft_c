@@ -1,40 +1,35 @@
-SOURCES            =    $(wildcard *.c)
+SRC = ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+ft_memset.c ft_strlen.c  \
+ft_tolower.c ft_toupper.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
+ft_strlcat.c  \
 
-OBJECTS            =     $(SOURCES:.c=.o)
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJECTS_BONUS    =     $(SOURCES_BONUS:.c=.o)
+NAME = libft.a
 
-NAME            =    libft.a
+CC = gcc
 
-CC                =    clang
-AR                =    ar
-RM                =    rm -f
+CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS            =    -Wall -Wextra -Werror
-ARFLAGS         =    rcs
+OBJ := $(SRC:%.c=%.o)
 
-.c.o:
-				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+BONUS_OBJ := $(BONUS_SRC:%.c=%.o)
 
-# so:
-# 				$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCES)
-# 				gcc -nostartfiles -shared -o libft.so $(OBJECTS)
+all:    $(NAME)
 
+$(NAME):    $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
-all:			$(NAME)
-
-$(NAME):		$(OBJECTS)
-				$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
-
-bonus:			$(NAME)
-				$(AR) $(ARFLAGS) $(NAME)
+bonus:
+	$(CC) $(CFLAGS) -c $(BONUS_SRC)
+	ar -rcs $(NAME) $(BONUS_OBJ)
 
 clean:
-				$(RM) $(OBJECTS)
+	rm -rf *.o
+	rm -rf ./a.out
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean:    clean
+	rm -rf $(NAME)
 
-re:				fclean all
-
-.PHONY:			all clean fclean re
+re:    fclean all

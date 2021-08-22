@@ -6,13 +6,13 @@
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 23:22:07 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/19 23:22:46 by klaurind         ###   ########.fr       */
+/*   Updated: 2021/08/21 22:02:18 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
 	{

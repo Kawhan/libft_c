@@ -6,9 +6,11 @@
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:45:06 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/20 00:07:02 by klaurind         ###   ########.fr       */
+/*   Updated: 2021/08/21 21:58:42 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
