@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 12:27:05 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/22 20:49:27 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/22 14:25:22 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/22 14:25:26 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	char			*last_occurence;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	character;
 
-	last_occurence = NULL;
+	str = (unsigned char *)s;
+	character = (unsigned char)c;
 	i = 0;
-	while (s[i])
+	while (i < n)
 	{
-		if (s[i] == (char)c)
-			last_occurence = (char *)&s[i];
+		if (*str == character)
+		{
+			return (str);
+		}
+		str++;
 		i++;
 	}
-	if ((char)c == s[i])
-		return ((char *)&s[i]);
-	return (last_occurence);
+	return (NULL);
 }

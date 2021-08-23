@@ -148,7 +148,7 @@ char	*ft_strrchr(const char *s, int c);
  * @return A pointer to the newly allocated string, or a null pointer
  * if an error occurred.
  */
-char	*ft_strdup(const char *str);
+char	*ft_strdup(const char *s);
 
 /**
  * @brief Locates the first occurrence of the null-terminated string little

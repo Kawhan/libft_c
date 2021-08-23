@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 12:27:05 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/22 20:49:27 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/22 02:18:55 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/22 02:20:00 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
-	char			*last_occurence;
+	size_t	i;
 
-	last_occurence = NULL;
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			last_occurence = (char *)&s[i];
+	while (s1[i] && s2[i] && (unsigned char)s1[i] == (unsigned char)s2[i]
+		&& i < n)
 		i++;
-	}
-	if ((char)c == s[i])
-		return ((char *)&s[i]);
-	return (last_occurence);
+	if (i == n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

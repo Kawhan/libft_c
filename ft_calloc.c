@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 12:27:05 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/22 20:49:27 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/22 20:19:44 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/22 20:21:08 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t number, size_t size)
 {
-	unsigned int	i;
-	char			*last_occurence;
+	void	*ptr;
 
-	last_occurence = NULL;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			last_occurence = (char *)&s[i];
-		i++;
-	}
-	if ((char)c == s[i])
-		return ((char *)&s[i]);
-	return (last_occurence);
+	ptr = malloc(number * size);
+	if (ptr == NULL)
+		return (ptr);
+	ft_bzero(ptr, size * number);
+	return (ptr);
 }

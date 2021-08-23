@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaurind <klaurind@students.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 12:27:05 by klaurind          #+#    #+#             */
-/*   Updated: 2021/08/22 20:49:27 by klaurind         ###   ########.fr       */
+/*   Created: 2021/08/22 20:22:21 by klaurind          #+#    #+#             */
+/*   Updated: 2021/08/22 20:30:28 by klaurind         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	unsigned int	i;
-	char			*last_occurence;
+	size_t	len;
+	char	*dup;
 
-	last_occurence = NULL;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			last_occurence = (char *)&s[i];
-		i++;
-	}
-	if ((char)c == s[i])
-		return ((char *)&s[i]);
-	return (last_occurence);
+	len = ft_strlen(s) + 1;
+	dup = (char *)malloc(sizeof(char) * len);
+	if (dup == NULL)
+		return (NULL);
+	ft_strlcpy(dup, s, len);
+	return (dup);
 }
